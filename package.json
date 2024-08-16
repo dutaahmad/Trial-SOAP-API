@@ -1,4 +1,10 @@
 {
-  "name": "Trial-SOAP-API",
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.4.0+sha512.91d93b445d9284e7ed52931369bc89a663414e5582d00eea45c67ddc459a2582919eece27c412d6ffd1bd0793ff35399381cb229326b961798ce4f4cc60ddfdb",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
 }
