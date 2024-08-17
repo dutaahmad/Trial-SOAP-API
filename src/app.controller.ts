@@ -9,4 +9,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('parser')
+  getParser() {
+    return {
+      message: "get parser success",
+      parser: this.appService.getParser(),
+      parserType: typeof this.appService.getParser(),
+    };
+  }
 }
