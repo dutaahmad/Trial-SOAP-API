@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,12 +10,21 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('parser')
-  getParser() {
-    return {
-      message: "get parser success",
-      parser: this.appService.getParser(),
-      parserType: typeof this.appService.getParser(),
-    };
+  @Post("soap-request")
+  async soapRequest(
+    @Body() body: {
+      base_url: string,
+      endpoint: string,
+      soap_action: string,
+      payload: object,
+    }
+  ) {
+    console.log("start soapRequest. body: ", body);
+    try {
+      return await this.appService.fetchDataFromSOAPApi(body);
+    } catch (error) {
+      console.error("Error in soapRequest: ", error);
+      throw error;
+    }
   }
 }
