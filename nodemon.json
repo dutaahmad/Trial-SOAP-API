@@ -1,8 +1,0 @@
-{
-    "watch": [
-        "src",
-        "."
-    ],
-    "ext": "ts",
-    "exec": "concurrently \"yarn tsc --watch\" \"ts-node server.ts\""
-}
