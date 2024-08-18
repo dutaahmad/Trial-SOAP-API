@@ -39,6 +39,7 @@ export class AppService {
         data: requestBody,
       });
       return Parser.convertXMLToJSON(response.data);
+      return response.data;
     } catch (error) {
       if (error instanceof AxiosError) {
         console.error("Axios Error : ", await Parser.convertXMLToJSON(error.response.data));
